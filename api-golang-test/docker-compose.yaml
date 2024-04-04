@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    container_name: AprendaGolangPostgres
+    environment:
+      POSTGRES_DB: todos
+      POSTGRES_USER: Tutuacs
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - 5432:5432
