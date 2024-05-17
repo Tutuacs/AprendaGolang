@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    container_name: AprendaGolangHexagonalPostgres
+    environment:
+      POSTGRES_DB: Hexagonal
+      POSTGRES_USER: Tutuacs
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - 5432:5432
