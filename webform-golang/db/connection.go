@@ -16,10 +16,11 @@ func getConnection() (client *mongo.Client, ctx context.Context) {
 		log.Fatal(err)
 	}
 
-	ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	if err = client.Connect(ctx); err != nil {
 		log.Fatal(err)
 	}
+	defer cancel()
 
 	return
 }
